@@ -17,14 +17,14 @@ const PORT = process.env.PORT || 5000;
 const expressApp = express();
 
 const corsOptions = {
-	origin: "https://main--chatwaveapplication.netlify.app/", 
+	origin: "https://chatwaveapplication.netlify.app", 
 	credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 	allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 expressApp.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://main--chatwaveapplication.netlify.app');
+  res.header('Access-Control-Allow-Origin', 'https://chatwaveapplication.netlify.app');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Credentials', 'true');
@@ -46,7 +46,7 @@ connectToMongoDB();
 const server = http.createServer(expressApp);
 const io = new Server(server, {
   cors: {
-    origin: ["https://main--chatwaveapplication.netlify.app"],
+    origin: ["https://chatwaveapplication.netlify.app"],
     methods: ["GET", "POST"],
   },
 });
