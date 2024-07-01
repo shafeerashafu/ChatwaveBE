@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 const expressApp = express();
 
 const corsOptions = {
-	origin: "http://localhost:3000", 
+	origin: "https://main--chatwaveapplication.netlify.app/", 
 	credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 	allowedHeaders: ['Content-Type', 'Authorization'],
@@ -39,7 +39,7 @@ connectToMongoDB();
 const server = http.createServer(expressApp);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000"],
+    origin: ["https://main--chatwaveapplication.netlify.app/"],
     methods: ["GET", "POST"],
   },
 });
